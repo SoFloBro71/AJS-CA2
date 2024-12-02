@@ -1,11 +1,13 @@
-import { View, Text, StyleSheet } from "react-native";
+import {View, Text, StyleSheet} from "react-native"
+import LoginForm from "@/components/LoginForm"
 
 export default function Tab() {
 	return (
 		<View style={styles.container}>
 			<Text>Tab Home</Text>
+			<LoginForm />
 		</View>
-	);
+	)
 }
 
 const styles = StyleSheet.create({
@@ -14,4 +16,4 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 		alignItems: "center",
 	},
-});
+})
