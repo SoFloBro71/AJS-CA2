@@ -30,6 +30,7 @@ export function SessionProvider(props: PropsWithChildren) {
 				signOut: () => {
 					setSession(null)
 				},
+				session,
 				isLoading,
 			}}
 		>
