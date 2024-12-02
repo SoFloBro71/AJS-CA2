@@ -15,7 +15,7 @@ export function useSession() {
 		}
 	}
 
-	return value
+	return value as IAuthContext;
 }
 
 export function SessionProvider(props: PropsWithChildren) {
