@@ -1,4 +1,4 @@
-import {useState} from "react"
+import {ChangeEvent, useState} from "react"
 import {Button, StyleSheet, Text, TextInput} from "react-native"
 import axios from "axios"
 import {useSession} from "@/context/AuthContext"
@@ -14,7 +14,7 @@ export default function LoginForm() {
 
     const { signIn } = useSession();
 
-	const handleChange = (e: any) => {
+	const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 		setForm((prevState) => ({
 			...prevState,
 			[e.target.id]: e.target.value,
