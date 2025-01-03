@@ -71,31 +71,22 @@ export default function Page() {
                 id='description'
             />
 
-            <Text>City</Text>
+            <Text>Genre_id</Text>
             <TextInput
                 style={styles.input}
-                placeholder='City'
-                value={form.city}
+                placeholder='Genre_id'
+                value={form.genre_id}
                 onChange={handleChange}
                 id='city'
             />
 
-            <Text>Start Date</Text>
+            <Text>Release_Date</Text>
             <TextInput
                 style={styles.input}
-                placeholder='Start Date'
-                value={form.start_date}
+                placeholder='Release_Date'
+                value={form.release_date}
                 onChange={handleChange}
                 id='start_date'
-            />
-
-            <Text>End Date</Text>
-            <TextInput
-                style={styles.input}
-                placeholder='End Date'
-                value={form.end_date}
-                onChange={handleChange}
-                id='end_date'
             />
 
             <Text>{error}</Text>
