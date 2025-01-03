@@ -2,51 +2,51 @@ import { View, Text, StyleSheet, FlatList } from "react-native";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-import FestivalItem from "@/components/FestivalItem";
+import GameItem from "@/components/GameItem";
 
 import { Link } from 'expo-router';
 
-import { FestivalType } from "@/types";
+import { GameType } from "@/types";
 
 export default function Tab() {
 
-  const [festivals, setFestivals] = useState([]);
+  const [games, setGames] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://festivals-api.vercel.app/api/festivals`)
+    axios.get(`https://ajs-ca.vercel.app/api/games`)
 
-        .then(response => {
-          console.log(response.data);
-          setFestivals(response.data);
-        })
+      .then(response => {
+        console.log(response.data);
+        setGames(response.data);
+      })
 
-        .catch(e => {
-          console.log(e);
-        })
+      .catch(e => {
+        console.log(e);
+      })
   }, []);
 
-  if(festivals.length === 0) return <Text>No Festivals Found </Text>
+  if (games.length === 0) return <Text>No Games Found </Text>
 
-	return (
-		<SafeAreaProvider>
+  return (
+    <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
         <FlatList
-        data={festivals}
-        renderItem={({item}) => <FestivalItem festival={item}/>}
-        keyExtractor={(festival: FestivalType) => festival._id}
+          data={games}
+          renderItem={({ item }) => <GameItem game={item} />}
+          keyExtractor={(game: GameType) => game._id}
         />
 
       </SafeAreaView>
     </SafeAreaProvider>
 
-	);
+  );
 }
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: "center",
-		alignItems: "center",
-	},
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 
 });

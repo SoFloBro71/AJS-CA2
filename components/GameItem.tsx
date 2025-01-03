@@ -1,23 +1,23 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Link } from "expo-router";
-import { FestivalType } from "@/types";
+import { GameType } from "@/types";
 
 interface MyProps {
-	festival: FestivalType;
+	game: GameType;
 }
 
-export default function FestivalItem({ festival }: MyProps) {
+export default function GameItem({ game }: MyProps) {
 	return (
 		<View style={styles.item}>
 			<Link
 				href={{
-					pathname: "/festivals/[id]",
-					params: { id: festival._id },
+					pathname: "/games/[id]",
+					params: { id: game._id },
 				}}
 			>
-				<Text>{festival.title}</Text>
+				<Text>{game.title}</Text>
 			</Link>
-			<Text>{festival.city}</Text>
+			<Text>{game.description}</Text>
 		</View>
 	);
 }

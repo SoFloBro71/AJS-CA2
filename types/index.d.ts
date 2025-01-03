@@ -1,8 +1,9 @@
-export interface FestivalType {
+export interface GameType {
 	_id: string;
 	title: string;
-	city: string;
+	genre: string;
 	description: string;
+	release_date: string;
 }
 
 export interface IAuthContext {
